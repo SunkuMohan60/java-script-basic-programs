@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <button type="button" onclick="displaysubtopics()">click me</button>
+
+    <p id="subtopics" style="background-color: blue;">not set</p>
+
+
+    <h2>Operator Practice</h2>
+    <button type="button" onclick="arithmeticExample()">Add</button>
+    <button type="button" onclick="substraction()">sub</button>
+    <button type="button" onclick="product()">Mul</button>
+    <button type="button" onclick="reminder()">Div</button>
+    <button type="button" onclick="naturalnumbers()">naturalnumbers</button> 
+    <button type="button" onclick="even_numbers()">even</button>
+    <button type="button" onclick="odd_numbers()">odd</button>
+    <button type="button" onclick="fibnoccci()">fibnocci</button>
+    <button type="button" onclick="char_letters()">char_finding</button>
+    <button type="button" onclick="comparisonExample()"> comparision x less than  y </button>
+    <button type="button" onclick="primenumber()"> primenumber </button>
+
+    <br>
+    <button type="button" onclick="sumarray()">sum array </button>
+    <button type="button" onclick="product()">product </button>
+    <button type="button" onclick="sum_of_oddarr_evenarr()">sum_of_oddarr_evenarr</button>
+    <button type="button" onclick="string()">stringreverse</button>
+    <button type="button" onclick="string_seperator()">string_seperation</button>
+    <button type="button" onclick="reverseWordsInSentence()">reverse_words</button>
+    <button type="button" onclick="reverse_all_words()">reverse_all_char</button>
+    <button type="button" onclick="sort_alphabets()">sorting alphbets</button>
+
+
+
+
+
+
+
+</body>
+
+<script>
+
+
+    function displaysubtopics() {
+        let input = prompt();
+        //document.getElementById('subtopics').innerHTML = input; 
+        alert(input); // Corrected method to display an alert
+    }
+
+    function displaysubtopics() {
+        let input = prompt();
+        alert(input);
+    }
+
+    function arithmeticExample() {
+        let result1 = parseFloat(prompt("enter number 1: "));
+        let result2 = parseFloat(prompt("enter number 2 :"));
+        let op = result1 + result2
+        alert(op);
+    }
+
+    function substraction() {
+        let result1 = parseFloat(prompt());
+        let result2 = parseFloat(prompt());
+        let op = result1 - result2
+        alert(op);
+    }
+
+    function product() {
+        let result1 = parseFloat(prompt());
+        let result2 = parseFloat(prompt());
+        let op = result1 * result2
+        alert(op);
+    }
+    
+    function reminder() {
+        let result1 = parseFloat(prompt());
+        let result2 = parseFloat(prompt());
+        let op = result1 % result2
+        alert(op);
+    }
+    
+
+    function naturalnumbers(){
+        let input = parseInt(prompt());
+        var num = ""
+        for (let i=1 ;i<=input;i++){
+            num += i + " "; 
+        }
+        alert(num);
+    }
+    
+    function even_numbers() {
+    let input = parseInt(prompt());
+    let op = "";
+    for (let i = 0; i <= input; i++) {
+        if (i % 2 == 0) {
+            op += i + " "; 
+        }
+    }
+    alert(op);
+    }
+
+
+    function odd_numbers() {
+    let input = parseInt(prompt());
+    let op = "";
+    for (let i = 0; i <= input; i++) {
+        if (i % 2 != 0) {
+            op += i + " "; 
+        }
+    }
+    alert(op);
+    }
+    
+   function fibnoccci(){
+    let input = parseInt(prompt());
+    let op = [0 , 1];
+    for (let i = 2; i < input; i++){
+        op.push((op[i-1] + op[i - 2]));
+    }
+    alert(op.join(","));
+
+
+   }
+    
+   function char_letters(){
+    let character = prompt();
+switch (character) {
+    case 'a':
+        alert("Apple");
+        break;
+    case 'b':
+        alert("Ball");
+        break;
+    case 'c':
+        alert("Cat");
+        break;
+    case 'd':
+        alert("Dog");
+        break;
+    default:
+        alert("Invalid character");
+}
+
+
+}
+
+function primenumber(){
+let input = parseInt(prompt());
+
+let isPrime = true;
+
+if (input <= 1) {
+    isPrime = false;
+} 
+else
+{
+    for (let i = 2; i < input; i++) {
+        if (input % i === 0) {
+            isPrime = false;
+            break;
+        }
+    }
+}
+
+if (isPrime) {
+    alert(isPrime);
+} else {
+    alert(isPrime);
+}
+
+
+
+}
+
+
+
+
+function sumarray() {
+    let input = prompt("Enter numbers separated by spaces:");
+    let inputArray = input.split(",").map(Number);
+    sum = 0
+    for (let num of inputArray){
+        sum += num;
+    }
+    alert(sum);
+
+}
+
+function product() {
+    let input = prompt("Enter numbers separated by spaces:");
+    let inputArray = input.split(",").map(Number);
+    sum = 1
+    for (let num of inputArray){
+        sum *= num;
+    }
+    alert(sum);
+
+}
+
+
+function sum_of_oddarr_evenarr() {
+    let input = prompt("Enter numbers separated by spaces:");
+    let inputArray = input.split(",").map(Number);
+    let even_arr = [];
+    let odd_arr=[];
+
+
+    for (let num of inputArray){
+        if (num % 2 == 0){
+           even_arr.push(num);
+           
+        }
+        else{
+        odd_arr.push(num);
+        }
+    }
+    alert(even_arr)
+    alert(odd_arr)
+}
+
+function string(){
+    let input = prompt().split("").reverse().join("");
+    alert(input)
+}
+
+
+function string_seperator(){
+    let input = prompt().split(" ")
+    alert(input)
+}
+
+
+function reverseWordsInSentence() {
+    let input = prompt("Enter a sentence:");
+    
+    let words = input.split(" ");
+
+   
+    let reversedWords = words.reverse();
+
+    let reversedSentence = reversedWords.join(" ");
+
+    alert("Reversed Sentence: " + reversedSentence);
+}
+
+
+function reverse_all_words() {
+    let input = prompt("Enter a sentence:");
+    let words = input.split(" ");
+    
+    let reversedWords = words.map(word => word.split("").reverse().join(""));
+    
+    
+    let reversedSentence = reversedWords.join(" ");
+    
+
+    alert("Reversed Sentence: " + reversedSentence);
+}
+
+
+
+function sort_alphabets(){
+    let input = prompt().split(" ");
+    let words = input.sort();
+
+    alert(words)
+   
+
+
+}
+
+
+
+
+
+
+
+    function comparisonExample() {
+        let x = parseInt(prompt());
+        let y = parseInt(prompt());
+        let comparisonResult = x < y;
+        alert(comparisonResult);
+    }
+
+    function logicalExample() {
+        let a = parseInt(prompt());
+        let b = parseInt(prompt());
+        let logicalResult = a && b;
+        alert("Logical Example: true && false = " + logicalResult);
+    }
+
+    function assignmentExample() {
+        let value = parseint(prompt());
+        value += 1;
+        alert(value);
+    }
+
+
+
+    let inputElement = document.createElement("input");
+    inputElement.type = "checkbox";
+    inputElement.id = "mycheckbox";
+    document.body.appendchild(inputElement);
+
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+</script>
